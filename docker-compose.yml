@@ -1,0 +1,14 @@
+version: '2'
+
+services: 
+  aurelia:
+    image: shintech/aurelia-seed:latest
+    container_name: aurelia
+    network_mode: bridge
+    env_file:
+      - ./aurelia.env
+    external_links:
+      - postgres
+    ports:
+      - "8000:8000"
+    restart: always
